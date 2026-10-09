@@ -15,6 +15,7 @@
 *.dll
 *.so
 *.dylib
+
 /my-issue2md-project
 
 # Test binary, built with `go test -c`

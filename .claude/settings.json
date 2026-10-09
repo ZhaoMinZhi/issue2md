@@ -1,0 +1,53 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check_main_branch.py"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "defaultMode": "plan",
+    "allow": [
+      "Read(*.go)",
+      "Read(go.mod)",
+      "Read(Makefile)",
+      "Read(README.md)",
+      "Read(constitution.md)",
+      "Read(specs/**)",
+      "Grep",
+      "Glob",
+      "LS",
+      "Bash(go:version)",
+      "Bash(go:list:*)",
+      "Bash(go:build:*)",
+      "Bash(go:test:*)",
+      "Bash(gofmt:*)",
+      "Bash(goimports:*)",
+      "Bash(golangci-lint:run:*)"
+    ],
+    "ask": [
+      "Write",
+      "Edit",
+      "MultiEdit",
+      "Bash(go:get:*)",
+      "Bash(go:mod:tidy)",
+      "Bash(git:add:*)",
+      "Bash(git:commit:*)",
+      "Bash(git:push:*)"
+    ],
+    "deny": [
+      "Read(./.env*)",
+      "Read(*.pem)",
+      "Read(*.key)",
+      "Bash(rm:*)",
+      "WebFetch"
+    ]
+  }
+}
