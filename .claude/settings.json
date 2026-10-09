@@ -13,7 +13,7 @@
     ]
   },
   "permissions": {
-    "defaultMode": "plan",
+    "defaultMode": "default",
     "allow": [
       "Read(*.go)",
       "Read(go.mod)",
